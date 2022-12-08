@@ -74,7 +74,7 @@ HA配置(ZooKeeper)
 </br>
 1. 確定ZooKeeper已經啟動，至/spark/conf中註解掉spark-env.sh export SPARK_MASTER_HOST，因為採用ZooKeeper後就沒有固定Maseter。
 2. 增加SPARK_DAEMON_JAVA_OPTS至spark-env.sh中，告訴Spark recoveryMode=ZooKeeper/Zookeeper的url是什麼/臨時節點路徑。
-![StandbyMastersWithZooKeeper](/StandbyMastersWithZooKeeper.PNG)
+![StandbyMastersWithZooKeeper](/Picture/StandbyMastersWithZooKeeper.PNG)
 3. 將文件複製到每台Server上
 4. 啟動集群spark/sbin/start-all.sh(啟動Master & Worker)
 
@@ -131,7 +131,7 @@ conf.set("spark.submit.pyFiles","xx.py")
 ! 注意讀取文件的路徑一定要是各個機器都能訪問到的地址，因為是分布式計算
 
 ! PySpark運作: Python -> JVM Code -> JVM Driver -> RPC -> 調度JVM Executor -> PySpark中轉 -> Python Executor進程
-![PySpark](PySpark.jpg)
+![PySpark](/Picture/PySpark.jpg)
 Driver端由JVM執行，Executor端由JVM做命令轉發，底層由Python解釋器執行工作
 
 分布式Coding的重要特徵
@@ -780,7 +780,7 @@ Spark的核心是根據RDD實現的，Spark Scheduler則為Spark核心實現的�
 DAG(有向無環圖)，有方向沒有形成閉環的一個執行流程圖。
 * 有向: 有方向
 * 無環: 沒有閉環
-![DAG](DAG.png)
+![DAG](/Picture/DAG.png)
 
 Job & Action
 
